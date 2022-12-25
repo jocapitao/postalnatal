@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mountains+of+Christmas&family=Rubik+80s+Fade&display=swap');
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #D9C5B4;
+}
+
+.card{
+  height: 70%;
+  width: 70%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: 2s;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+
+}
+.card:hover{
+  transform: rotate(-10deg);
+}
+.card:hover .outside{
+  transform: rotateY(-100deg);
+}
+.outside{
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 2s;
+  transform-origin: left;
+}
+.front,.back{
+  height: 100%;
+  width: 100%;
+  position: absolute;  
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /*hide backface in firefox*/
+  transform: rotateX(0deg);   
+}
+.front{
+  background-color: #ff0000;
+  z-index: 1;
+}
+.front:before{
+  content: "";
+  position: absolute;
+  background-color: #101010;
+  height: 10%;
+  width: 100%;
+  top: 50%;
+}
+.belt{
+  height: 25%;
+  width: 25%;
+  border: 20px solid #ffbb00;
+  border-radius: 10px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 44%;
+  z-index: 1;
+}
+.belt:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background-color: #ffbb00;
+  top: 30%;
+  right: 0%;
+  left: 20%;
+}
+.mouth{
+  position: absolute;
+  background-color: #A82912;
+  height: 15px ;
+  width: 130px;
+  z-index: 1;
+  border-radius: 0 0 50% 50%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 85px;
+}
+.beard{
+  background-color: #F2F2F2;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  border-radius: 0 0 50% 50%;
+}
+.beard:before,
+.beard:after{
+  position: absolute;
+  content: "";
+  width: 130px;
+  height: 50px;
+  background-color: #F2F2F2;
+  box-shadow: 0 10px #FFA26C;
+  border-radius: 0 0 50% 50%;
+  top: -0px;
+  z-index: 2;
+}
+.beard:before{
+  left: 40px;
+}
+.beard:after{
+  right: 40px;
+}
+.back{
+  background: linear-gradient(
+    to right,
+    #ff0000 50%,
+    #830000
+  );
+  transform: rotateY(180deg);
+}
+.inside{
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  background: linear-gradient(
+    to left,
+    #ff0000 50%,
+    #830000
+  );
+  font-family: 'Mountains of Christmas', cursive;
+  color: #ffbb00;
+  font-size: 80px;
+  text-align: center;
+  line-height: 80px;
+  padding: 90px 10px;
+  box-shadow: 25px 25px 35px rgba(0,0,0,0.3);
+}
+
+#text1, #text2{
+font-family: 'Montserrat', sans-serif;
+font-size: 30px;
+line-height: 30px;
+}
+
+#textsr, #textform{font-family: 'Rubik 80s Fade', cursive;font-size: 30px;line-height: 30px;
+}
+
+/*font-family: 'Mountains of Christmas', cursive;
+*/
